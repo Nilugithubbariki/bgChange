@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+const App = () => {
+  const [bg, setBg] = useState("yellow");
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div style={{ background: bg, width: "100%", height: "100vh" }}>
+      <div className="containter" style={{ background: bg }}>
+        <button
+          style={{ background: "red", border: "none" }}
+          onClick={() => setBg("red")}
         >
-          Learn React
-        </a>
-      </header>
+          Red
+        </button>
+        <button
+          style={{ background: "blue", border: "none" }}
+          onClick={() => setBg("blue")}
+        >
+          Blue
+        </button>
+        <button
+          style={{ background: "gray", border: "none" }}
+          onClick={() => setBg("gray")}
+        >
+          Gray
+        </button>
+        <button
+          style={{ background: "black", border: "none", color: "white" }}
+          onClick={() => setBg("black")}
+        >
+          Black
+        </button>
+        <button
+          style={{ background: "green", border: "none" }}
+          onClick={() => setBg("green")}
+        >
+          Green
+        </button>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
